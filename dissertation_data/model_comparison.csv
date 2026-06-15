@@ -1,0 +1,5 @@
+Model,R²,MAE (J)
+Linear Regression,0.9995,30.9
+Random Forest,1.0,13.98
+XGBoost,0.9999,20.59
+LightGBM,0.9999,19.36
