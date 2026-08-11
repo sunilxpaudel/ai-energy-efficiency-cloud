@@ -1,32 +1,52 @@
 # AI Energy Efficiency in Cloud Data Centres
 
-**MSc Dissertation — Ravensbourne University London**
-**Student:** Sunil Paudel
-**Start Date:** May 2026
+MSc Dissertation — Ravensbourne University London
+Student: Sunil Paudel
+Supervisor: Dr M. Rehan Usman
+Submission Date: August 2026
 
 ## Research Topic
-Optimising Energy Efficiency of AI Workloads in Cloud Data Centres using Machine Learning Techniques.
 
-## Objectives
-Obj 1: Characterize and preprocess erratic, real-world AI workload traces into discrete time-series resource telemetry structures.
-Obj 2: Train and evaluate a high-performance machine learning regression model to accurately forecast upcoming token traffic and compute bursts.
-Obj 3: Design an original, custom control heuristic to dynamically adjust hardware power scaling based on prediction confidence boundaries.
-Obj 4: Quantify total data center energy savings against baseline operations while validating zero violation of Service Level Objectives (SLOs).
+Optimising Energy Efficiency of AI Workloads in Cloud 
+Data Centres using Machine Learning Techniques.
 
-## Research Architecture & Milestones
+## Project Status: COMPLETE
 
-### 📊 Milestone 1: Data Infrastructure & Telemetry Aggregation (Completed)
-- **Target Workload Trace:** Modeled on the official Microsoft Azure LLM Inference Traces (2024).
-- **Feature Engineering Pipeline:** 
-  - Converted raw request streams into discrete **1-minute resource windows**.
-  - Generated direct GPU-stress proxy metrics: `ArrivalRate`, `TotalInputTokens`, and `TotalOutputTokens`.
-  - Extracted cyclic temporal features (`Hour`, `Minute`) to train time-series estimators.
-- **Development Environment:** Configured localized Anaconda/Jupyter workspace on macOS.
+This dissertation project has been completed and submitted.
 
-### 🤖 Milestone 2: Predictor Engine Training (In Progress)
-- Implementation of an **XGBoost / LightGBM Time-Series Forecaster** to predict upcoming token volume spikes 60 seconds into the future.
+## Key Results
+
+- CBIS (Confidence-Bounded Idle Scaling) algorithm achieved 
+  8.06% energy reduction on real production data
+- XGBoost model achieved R² of 1.0000, MAE of 17.38 Joules
+- Confusion matrix validation: 99.94% precision, 99.88% recall
+- Zero SLO violations recorded across evaluation period
+
+## Dataset
+
+Primary dataset: BurstGPT (Wang et al., 2025) — 1,404,294 
+real Microsoft Azure GPT-3.5/GPT-4 requests over 60 
+continuous days, aggregated into 87,833 minute-level records.
+
+## Repository Structure
+notebooks/ - Jupyter notebooks (data pipeline, model
+training, CBIS implementation)
+data/ - Processed datasets and results (CSV, JSON)
+outputs/ - Generated charts and visualisations
+
+## Objectives (All Completed)
+
+- Characterise real-world LLM inference workload patterns 
+  using production trace data
+- Train and evaluate machine learning models for short-term 
+  energy consumption forecasting
+- Design the CBIS algorithm using prediction confidence to 
+  guide power scaling decisions
+- Evaluate energy savings and service reliability against 
+  baseline operations
 
 ## Technologies
-- Python
-- Machine Learning
-- Cloud Platforms (AWS/Azure)
+
+- Python (pandas, numpy, scikit-learn)
+- XGBoost, LightGBM
+- Jupyter Notebook
